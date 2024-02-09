@@ -14,10 +14,10 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   int selectedIndex = 0;
   List<Widget> tabs = [
-    const QuranTab(),
-    const HadeathTab(),
     const RadioTab(),
-    const SebhaTab()
+    const SebhaTab(),
+    const HadeathTab(),
+     QuranTab(),
   ];
   @override
   Widget build(BuildContext context) {
