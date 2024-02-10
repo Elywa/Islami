@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
 
-class SebhaTab extends StatelessWidget {
-  const SebhaTab({Key? key}) : super(key: key);
+class SebhaTab extends StatefulWidget {
+  SebhaTab({Key? key});
+
+  @override
+  State<SebhaTab> createState() => _SebhaTabState();
+}
+
+class _SebhaTabState extends State<SebhaTab> {
+  int counter = 0;
+  double rotationAngle = 0.0; // Initial rotation angle
+  String text = 'سبحــان الله';
+  List<String> tasbeh = [
+    'سبحــان الله',
+    'الحمد لله',
+    'لا اله الا الله',
+    'الله أكبر'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +34,14 @@ class SebhaTab extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding:
-                EdgeInsets.only(top: 0), // Adjust the top padding as needed
-            child: Image(
-              image: AssetImage('assets/images/body of seb7a.png'),
+          Padding(
+            padding: const EdgeInsets.only(
+                top: 0), // Adjust the top padding as needed
+            child: Transform.rotate(
+              angle: rotationAngle,
+              child: Image(
+                image: AssetImage('assets/images/body of seb7a.png'),
+              ),
             ),
           ),
           const SizedBox(
@@ -48,10 +66,10 @@ class SebhaTab extends StatelessWidget {
               borderRadius: BorderRadius.circular(25),
               color: const Color(0xffB7935F),
             ),
-            child: const Center(
+            child: Center(
               child: Text(
-                '100',
-                style: TextStyle(
+                '$counter',
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 20,
                 ),
@@ -62,11 +80,26 @@ class SebhaTab extends StatelessWidget {
             padding: const EdgeInsets.only(top: 15),
             child: TextButton(
               style: TextButton.styleFrom(
-                  backgroundColor: const Color(0xffB7935F)),
-              onPressed: null,
-              child: const Text(
-                'سبحــان الله',
-                style: TextStyle(
+                backgroundColor: const Color(0xffB7935F),
+              ),
+              onPressed: () {
+                setState(() {
+                  counter++;
+                  rotationAngle += 15.0 * (3.141592653589793 / 180);
+                  if (counter % 33 == 0) {
+                    int index = counter ~/ 33;
+                    if (index < tasbeh.length) {
+                      text = tasbeh[index];
+                    } else {
+                      counter = 0;
+                      text = tasbeh[0];
+                    }
+                  }
+                });
+              },
+              child: Text(
+                text,
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 20,
                 ),

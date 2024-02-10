@@ -17,7 +17,7 @@ class _HomeViewState extends State<HomeView> {
   List<Widget> tabs = [
     QuranTab(),
     const HadeathTab(),
-    const SebhaTab(),
+     SebhaTab(),
     const RadioTab(),
   ];
   @override
