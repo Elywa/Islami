@@ -6,7 +6,7 @@ import 'package:islami/views/sebha_tab.dart';
 
 class HomeView extends StatefulWidget {
   HomeView({super.key});
-  static const  String routeName = 'home_view';
+  static const String routeName = 'home_view';
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -16,9 +16,9 @@ class _HomeViewState extends State<HomeView> {
   int selectedIndex = 0;
   List<Widget> tabs = [
     QuranTab(),
-    const RadioTab(),
-    const SebhaTab(),
     const HadeathTab(),
+    const SebhaTab(),
+    const RadioTab(),
   ];
   @override
   Widget build(BuildContext context) {

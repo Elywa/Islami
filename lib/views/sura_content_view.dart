@@ -50,8 +50,8 @@ class _SuraContentViewState extends State<SuraContentView> {
             ? const Center(child: CircularProgressIndicator())
             : Container(
                 margin: EdgeInsets.symmetric(
-                    vertical: MediaQuery.of(context).size.width * .06,
-                    horizontal: MediaQuery.of(context).size.height * .05),
+                    vertical: MediaQuery.of(context).size.width * .08,
+                    horizontal: MediaQuery.of(context).size.height * .03),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(22)),
