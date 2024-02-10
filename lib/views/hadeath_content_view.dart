@@ -14,8 +14,6 @@ class _HadeathContentViewState extends State<HadeathContentView> {
   List<String> hadeth = [];
   @override
   void initState() {
-    // TODO: implement initState
-
     loadFile(widget.index);
   }
 
