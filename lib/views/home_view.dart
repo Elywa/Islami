@@ -6,6 +6,7 @@ import 'package:islami/views/sebha_tab.dart';
 
 class HomeView extends StatefulWidget {
   HomeView({super.key});
+  static const  String routeName = 'home_view';
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -14,17 +15,17 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   int selectedIndex = 0;
   List<Widget> tabs = [
+    QuranTab(),
     const RadioTab(),
     const SebhaTab(),
     const HadeathTab(),
-     QuranTab(),
   ];
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-        image: AssetImage('assets/scaffold_background.png'),
+        image: AssetImage('assets/images/scaffold_background.png'),
         fit: BoxFit.fill,
       )),
       child: Scaffold(
@@ -57,24 +58,24 @@ class _HomeViewState extends State<HomeView> {
               items: const [
                 BottomNavigationBarItem(
                     icon: ImageIcon(
-                      AssetImage('assets/radio.png'),
+                      AssetImage('assets/images/quran.png'),
                     ),
-                    label: 'Radio'),
+                    label: 'Quran'),
                 BottomNavigationBarItem(
                     icon: ImageIcon(
-                      AssetImage('assets/sebha_blue.png'),
-                    ),
-                    label: 'Sebha'),
-                BottomNavigationBarItem(
-                    icon: ImageIcon(
-                      AssetImage('assets/quran-quran-svgrepo-com.png'),
+                      AssetImage('assets/images/quran-quran-svgrepo-com.png'),
                     ),
                     label: 'Hadeath'),
                 BottomNavigationBarItem(
                     icon: ImageIcon(
-                      AssetImage('assets/quran.png'),
+                      AssetImage('assets/images/sebha_blue.png'),
                     ),
-                    label: 'Quran'),
+                    label: 'Sebha'),
+                BottomNavigationBarItem(
+                    icon: ImageIcon(
+                      AssetImage('assets/images/radio.png'),
+                    ),
+                    label: 'Radio'),
               ]),
         ),
         body: tabs[selectedIndex],

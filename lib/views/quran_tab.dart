@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/components/heading_text.dart';
-import 'package:islami/constants.dart';
+import 'package:islami/components/item_sura_name.dart';
+import 'package:islami/models/constants.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -12,7 +13,7 @@ class QuranTab extends StatelessWidget {
         Expanded(
           flex: 3,
           child: Center(
-            child: Image.asset('assets/qur2an_screen_logo.png'),
+            child: Image.asset('assets/images/qur2an_screen_logo.png'),
           ),
         ),
         Expanded(
@@ -65,7 +66,14 @@ class QuranTab extends StatelessWidget {
           ),
           Expanded(
             flex: 6,
-            child: ListView.builder(
+            child: ListView.separated(
+              separatorBuilder: (context, index) {
+                return Container(
+                  height: 2,
+                  width: double.infinity,
+                  color: const Color(0xffB7935F),
+                );
+              },
               itemCount: Constants.suraNames.length,
               itemBuilder: (context, index) {
                 return Row(
@@ -82,14 +90,9 @@ class QuranTab extends StatelessWidget {
                       ),
                     ),
                     Expanded(
-                      child: Text(
-                        Constants.suraNames[index],
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
+                      child: ItemSuraName(
+                        text: Constants.suraNames[index],
+                        index: index,
                       ),
                     ),
                   ],
