@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ItemSuraContent extends StatelessWidget {
   const ItemSuraContent({super.key, required this.text, required this.index});
   final String text;

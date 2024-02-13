@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RadioTab extends StatelessWidget {
   const RadioTab({super.key});
@@ -7,30 +8,30 @@ class RadioTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      child: const Column(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
+          const Center(
             child: Image(
               image: AssetImage(
                   'assets/images/551-5517026_radio-vector-png-old-radio-png-vector-transparent.png'),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
-            'إذاعة القرآن الكريم ',
-            style: TextStyle(
+            AppLocalizations.of(context)!.izaa_quarn,
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 25,
               fontFamily: 'ElMessiri',
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Icon(

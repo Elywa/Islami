@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami/views/hadeath_content_view.dart';
-
+import 'package:islami/views/hadeath/hadeath_content_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HadeathName extends StatelessWidget {
   const HadeathName({super.key, required this.index});
   final int index;

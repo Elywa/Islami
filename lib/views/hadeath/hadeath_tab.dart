@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:islami/components/hadeath_name.dart';
+import 'package:islami/views/hadeath/hadeath_name.dart';
 import 'package:islami/components/heading_text.dart';
-import 'package:islami/components/item_sura_name.dart';
+import 'package:islami/views/quran/item_sura_name.dart';
 import 'package:islami/models/constants.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class HadeathTab extends StatelessWidget {
+class HadeathTab extends StatefulWidget {
   const HadeathTab({super.key});
 
+  @override
+  State<HadeathTab> createState() => _HadeathTabState();
+}
+
+class _HadeathTabState extends State<HadeathTab> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -38,14 +44,14 @@ class HadeathTab extends StatelessWidget {
             width: double.infinity,
             color: const Color(0xffB7935F),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
                   child: HeadingText(
-                    text: 'Hadeaths',
+                    text: AppLocalizations.of(context)!.hadeath,
                   ),
                 ),
               ],

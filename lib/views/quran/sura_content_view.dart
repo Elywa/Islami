@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami/components/item_sura_content.dart';
-
+import 'package:islami/views/quran/item_sura_content.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SuraContentView extends StatefulWidget {
   final String suraName;
   final int suraIndex;

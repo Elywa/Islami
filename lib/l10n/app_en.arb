@@ -1,0 +1,20 @@
+{
+ "app_title":"Islami",
+ "verses_number" : "Verses Number" , 
+ "sura_name" : "Sura Name",
+ "quran_tab": "Quran" , 
+ "hadeath" : "Hadeath",
+ "hadeath_tab":"Hadeath",
+ "tasbeah_number": "Tasbeeh Number",
+ "subhan_allah":"Subhan Allah",
+ "ahamdu_llah":"Alhamdullah",
+ "la_ilah_ila_allah":"La Ilah Ila Allah",
+ "allahu_akbar":"Allah Akbar",
+ "izaa_quarn":"Izaa Quran Kareem",
+ "sebha_tab":"Sebha",
+ "radio_tab":"Radio",
+ "settings_tab":"Settings",
+ "language":"Language",
+ "english":"English",
+ "arabic":"Arabic"
+}

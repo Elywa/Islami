@@ -1,0 +1,21 @@
+{
+    "app_title":"إسلامي",
+    "verses_number" : "عدد الآيات" , 
+    "sura_name" : "إسم السورة",
+    "quran_tab": "القرآن" , 
+    "hadeath" : "الحديث",
+    "hadeath_tab":"الحديث",
+    "tasbeah_number": "عدد التسبيحات",
+    "subhan_allah":"سبحــان الله",
+    "ahamdu_llah":"الحمـد لله",
+    "la_ilah_ila_allah":"لا إله إلا الله ",
+    "Allahu_akbar":"الله أكبر",
+    "izaa_quarn":"إذاعة القرآن الكريم",
+    "sebha_tab":"السبحــة",
+    "radio_tab":"الراديو" , 
+    "settings_tab":"الإعـدادات",
+    "language":"اللغه",
+    "english":"الانجليزيه",
+    "arabic":"العربيه"
+   
+   }

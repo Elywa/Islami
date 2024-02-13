@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:islami/views/hadeath_tab.dart';
-import 'package:islami/views/quran_tab.dart';
-import 'package:islami/views/radio_tab.dart';
-import 'package:islami/views/sebha_tab.dart';
+import 'package:islami/views/hadeath/hadeath_tab.dart';
+import 'package:islami/views/quran/quran_tab.dart';
+import 'package:islami/views/radio/radio_tab.dart';
+import 'package:islami/views/sebha/sebha_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/views/settings/settings.dart';
 
 class HomeView extends StatefulWidget {
   HomeView({super.key});
@@ -17,8 +19,9 @@ class _HomeViewState extends State<HomeView> {
   List<Widget> tabs = [
     QuranTab(),
     const HadeathTab(),
-     SebhaTab(),
+    SebhaTab(),
     const RadioTab(),
+    const Settings()
   ];
   @override
   Widget build(BuildContext context) {
@@ -33,9 +36,9 @@ class _HomeViewState extends State<HomeView> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           centerTitle: true,
-          title: const Text(
-            'إسلامي',
-            style: TextStyle(
+          title: Text(
+            AppLocalizations.of(context)!.app_title,
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 25,
               fontFamily: 'ElMessiri',
@@ -55,27 +58,32 @@ class _HomeViewState extends State<HomeView> {
                 selectedIndex = index;
                 setState(() {});
               },
-              items: const [
+              items: [
                 BottomNavigationBarItem(
-                    icon: ImageIcon(
+                    icon: const ImageIcon(
                       AssetImage('assets/images/quran.png'),
                     ),
-                    label: 'Quran'),
+                    label: AppLocalizations.of(context)!.quran_tab),
                 BottomNavigationBarItem(
-                    icon: ImageIcon(
+                    icon: const ImageIcon(
                       AssetImage('assets/images/quran-quran-svgrepo-com.png'),
                     ),
-                    label: 'Hadeath'),
+                    label: AppLocalizations.of(context)!.hadeath_tab),
                 BottomNavigationBarItem(
-                    icon: ImageIcon(
+                    icon: const ImageIcon(
                       AssetImage('assets/images/sebha_blue.png'),
                     ),
-                    label: 'Sebha'),
+                    label: AppLocalizations.of(context)!.sebha_tab),
                 BottomNavigationBarItem(
-                    icon: ImageIcon(
+                    icon: const ImageIcon(
                       AssetImage('assets/images/radio.png'),
                     ),
-                    label: 'Radio'),
+                    label: AppLocalizations.of(context)!.radio_tab),
+                BottomNavigationBarItem(
+                    icon: const Icon(
+                      Icons.settings,
+                    ),
+                    label: AppLocalizations.of(context)!.settings_tab),
               ]),
         ),
         body: tabs[selectedIndex],

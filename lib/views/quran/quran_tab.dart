@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:islami/components/heading_text.dart';
-import 'package:islami/components/item_sura_name.dart';
+import 'package:islami/views/quran/item_sura_name.dart';
 import 'package:islami/models/constants.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class QuranTab extends StatelessWidget {
+class QuranTab extends StatefulWidget {
   QuranTab({super.key});
 
+  @override
+  State<QuranTab> createState() => _QuranTabState();
+}
+
+class _QuranTabState extends State<QuranTab> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -41,19 +47,19 @@ class QuranTab extends StatelessWidget {
             width: double.infinity,
             color: const Color(0xffB7935F),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
                   child: HeadingText(
-                    text: 'Vreses Number',
+                    text: AppLocalizations.of(context)!.verses_number,
                   ),
                 ),
                 Expanded(
                   child: HeadingText(
-                    text: 'Sura Name',
+                    text: AppLocalizations.of(context)!.sura_name,
                   ),
                 ),
               ],
@@ -76,26 +82,29 @@ class QuranTab extends StatelessWidget {
               },
               itemCount: Constants.suraNames.length,
               itemBuilder: (context, index) {
-                return Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        '${Constants.versesNumber[index]}',
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          '${Constants.versesNumber[index]}',
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'ElMessiri'),
                         ),
                       ),
-                    ),
-                    Expanded(
-                      child: ItemSuraName(
-                        text: Constants.suraNames[index],
-                        index: index,
+                      Expanded(
+                        child: ItemSuraName(
+                          text: Constants.suraNames[index],
+                          index: index,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 );
               },
             ),

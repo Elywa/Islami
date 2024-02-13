@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami/components/hadeath_content.dart';
-
+import 'package:islami/views/hadeath/hadeath_content.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HadeathContentView extends StatefulWidget {
   HadeathContentView({super.key, required this.index});
   final int index;
